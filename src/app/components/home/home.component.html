@@ -1,0 +1,30 @@
+<div ng-if="">
+
+</div>
+<div *ngFor="let ele of response | async">
+    <div class="card-box row">
+        <div class="col-sm-12">
+            <div class="github-card card">
+                <div class="card-body row">
+                    <div class="col-sm-3">
+                        <img class="avatar-url" [src]="ele.node.owner.avatarUrl" alt="Avatar">
+                    </div>
+                    <div class="col-sm-9">
+                        <h5 class="card-title">{{ele.node.name}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">by {{ele.node.owner.login}}</h6>
+                        <p class="card-text card-description">{{ele.node.description}}</p>
+                        <span title="Forks"><i class="fa fa-code-fork icon-fork"></i>{{ele.node.forks}}</span> &nbsp;&nbsp;&nbsp;
+                        <span title="Stars"><i class="fa fa-star icon-stars"></i>{{ele.node.stargazers.stars}}</span> &nbsp;&nbsp;&nbsp;
+                        <span title="Watchers"><i class="fa fa-eye icon-eye"></i>{{ele.node.watchers.watchers}}</span> &nbsp;&nbsp;&nbsp;
+                        <span title="Total Issues"><i class="fa fa-exclamation-triangle icon-exclamation"></i>{{ele.node.totalIssues.totalIssues}}</span>
+                        <div class="repo-link">
+                            <a href="{{ele.node.url}}"><img class="github-icon" [src]=githubImage alt="github icon"></a>
+                        </div>
+                        <!-- <a href="{{ele.node.url}}">
+                        </img></a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
